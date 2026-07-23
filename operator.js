@@ -50,3 +50,16 @@ console.log(str1 + " " + str2); // "Hello World"
 //8. Type Operators
 console.log(typeof 5); // "number"
 console.log(typeof "Hello"); // "string"
+
+
+//strict Equality Comparison
+// Is a != b ?
+
+let a = '0';
+a = Boolean(a);
+
+let b = 0;
+b = Boolean(b);
+
+console.log('0' === 0);
+
