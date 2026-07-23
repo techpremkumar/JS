@@ -105,3 +105,15 @@ console.log("\n6. Ternary Operator");
 
 let result = (age >= 18) ? "Adult" : "Minor";
 console.log(result);
+
+let year = 2024;
+
+if (year % 400 === 0) {
+    console.log(year + " is a Leap Year");
+} else if (year % 100 === 0) {
+    console.log(year + " is Not a Leap Year");
+} else if (year % 4 === 0) {
+    console.log(year + " is a Leap Year");
+} else {
+    console.log(year + " is Not a Leap Year");
+}
