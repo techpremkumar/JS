@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:400px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.input-box{
+    display:flex;
+    gap:10px;
+}
+
+input{
+    flex:1;
+    padding:10px;
+    font-size:16px;
+}
+
+button{
+    padding:10px 15px;
+    background:green;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkgreen;
+}
+
+ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#eeeeee;
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:5px;
+}
+
+.completed{
+    text-decoration:line-through;
+    color:gray;
+}
+
+.delete{
+    background:red;
+    color:white;
+    border:none;
+    padding:5px 10px;
+    cursor:pointer;
+}
+
+.delete:hover{
+    background:darkred;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Todo List</h2>
+
+<div class="input-box">
+
+<input
+type="text"
+id="task"
+placeholder="Enter Task">
+
+<button id="addBtn">
+Add
+</button>
+
+</div>
+
+<ul id="list"></ul>
+
+</div>
+
+<script>
+
+/*
+====================================
+        TODO LIST PROJECT
+====================================
+
+Concepts Used
+
+✔ DOM
+✔ Event Listener
+✔ click
+✔ keypress (Enter)
+✔ createElement()
+✔ appendChild()
+✔ remove()
+✔ classList
+✔ Functions
+
+====================================
+*/
+
+
+// Selecting Elements
+
+let task=document.getElementById("task");
+let addBtn=document.getElementById("addBtn");
+let list=document.getElementById("list");
+
+
+// Add Task Function
+
+function addTask(){
+
+    let value=task.value.trim();
+
+    if(value===""){
+        alert("Please Enter a Task");
+        return;
+    }
+
+    // Create List Item
+
+    let li=document.createElement("li");
+
+    // Task Text
+
+    let span=document.createElement("span");
+    span.textContent=value;
+
+    // Completed
+
+    span.addEventListener("click",function(){
+
+        span.classList.toggle("completed");
+
+    });
+
+    // Delete Button
+
+    let delBtn=document.createElement("button");
+
+    delBtn.textContent="Delete";
+
+    delBtn.classList.add("delete");
+
+    delBtn.addEventListener("click",function(){
+
+        li.remove();
+
+    });
+
+    li.appendChild(span);
+
+    li.appendChild(delBtn);
+
+    list.appendChild(li);
+
+    task.value="";
+
+    task.focus();
+
+}
+
+
+// Click Event
+
+addBtn.addEventListener("click",addTask);
+
+
+// Press Enter
+
+task.addEventListener("keydown",function(event){
+
+    if(event.key==="Enter"){
+
+        addTask();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
