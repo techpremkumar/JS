@@ -1,0 +1,71 @@
+<!--DOM (Document Object Model) in JavaScript
+
+The DOM (Document Object Model) is a programming interface for HTML 
+and XML documents. It represents the webpage as a tree structure of objects, 
+allowing JavaScript to access, modify, add, or remove HTML elements, 
+attributes, and styles dynamically.
+Document
+│
+└── html
+    │
+    ├── head
+    │   └── title
+    │       └── "DOM Example"
+    │
+    └── body
+        ├── h1
+        │   └── "Welcome"
+        │
+        └── p
+            └── "This is a paragraph."
+
+            Common DOM Methods
+Method	Purpose
+getElementById()	Select by ID
+getElementsByClassName()	Select by class
+getElementsByTagName()	Select by tag
+querySelector()	First matching element
+querySelectorAll()	All matching elements
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Example</title>
+</head>
+<body>
+
+    <h1 id="heading">Welcome</h1>
+    <p>This is a paragraph.</p>
+
+    <script>
+        // getElementById()
+        const heading = document.getElementById("heading");
+        //2. getElementsByClassName()
+        const paragraphs = document.getElementsByClassName("paragraph");
+        //3. getElementsByTagName() 
+        const allElements = document.getElementsByTagName("*");
+        //4. querySelector()Returns the first matching element.
+        const firstParagraph = document.querySelector("p");
+        //5. querySelectorAll()
+        const allParagraphs = document.querySelectorAll("p");
+       // Changing Content
+       heading.innerHTML = "Hello, DOM!";
+       //textContent property is used to set or return the text content of the specified node, and all its descendants.
+       heading.textContent = "Hello, DOM!";
+       //Changing CSS Style
+         heading.style.color = "blue";
+         //Changing Attributes
+         heading.setAttribute("class", "main-heading");
+         //setAttribute() method is used to add a new attribute or change the value of an existing attribute on the specified element.
+         heading.setAttribute("id", "new-heading");
+         //getAttribute()
+            const headingId = heading.getAttribute("id");
+        
+
+    </script>
+
+</body>
+</html>
