@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="sj">Irukku</button>
+
+<script>
+let btn = document.getElementById("sj");
+
+// Click Event
+btn.addEventListener("click", (event) => {
+    btn.textContent = "Aana Illa";
+    console.log("clicked");
+});
+
+// Mouse Over Event
+btn.addEventListener("mouseover", (event) => {
+    btn.textContent = "Oruvella irukumo";
+    console.log("hover");
+});
+
+// Mouse Out Event
+btn.addEventListener("mouseout", (event) => {
+    btn.textContent = "Irukku";
+    console.log("mouse out");
+});
+</script>
+
+</body>
+</html>
