@@ -138,6 +138,7 @@ async
 await
 fetch()
 17. DOM (Document Object Model)
+
 Selecting Elements
 getElementById()
 querySelector()
