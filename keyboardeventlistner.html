@@ -1,0 +1,280 @@
+<!--
+
+Keyboard Event Properties
+Property	Description	Example
+event.key	Returns the key value	"A", "Enter"
+event.code	Returns the physical key code	"KeyA"
+event.ctrlKey	Checks if Ctrl is pressed	true / false
+event.shiftKey	Checks if Shift is pressed	true / false
+event.altKey	Checks if Alt is pressed	true / false
+event.metaKey	Checks if Windows/Command key is pressed	true / false
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Keyboard Events</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:20px;
+        }
+        input{
+            width:300px;
+            padding:10px;
+            font-size:16px;
+        }
+        h2{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Keyboard Events in JavaScript</h1>
+
+<input type="text" id="box" placeholder="Type something...">
+
+<h2 id="output">Output</h2>
+
+<script>
+
+/*
+========================================================
+              KEYBOARD EVENTS IN JAVASCRIPT
+========================================================
+
+Keyboard events occur whenever the user interacts
+with the keyboard.
+
+Common Keyboard Events
+
+1. keydown
+2. keyup
+
+Note:
+keypress is deprecated (avoid using it).
+
+Syntax
+
+element.addEventListener("keydown", function(event){
+
+});
+
+element.addEventListener("keyup", (event)=>{
+
+});
+
+========================================================
+*/
+
+
+let input = document.getElementById("box");
+let output = document.getElementById("output");
+
+
+//======================================================
+// 1. KEYDOWN EVENT
+//======================================================
+
+input.addEventListener("keydown",(event)=>{
+
+    console.log("Key Pressed :",event.key);
+
+});
+
+
+//======================================================
+// 2. KEYUP EVENT
+//======================================================
+
+input.addEventListener("keyup",(event)=>{
+
+    console.log("Key Released :",event.key);
+
+});
+
+
+//======================================================
+// 3. DISPLAY TYPED TEXT
+//======================================================
+
+input.addEventListener("keyup",()=>{
+
+    output.textContent="You Typed : "+input.value;
+
+});
+
+
+//======================================================
+// 4. DETECT SPECIFIC KEYS
+//======================================================
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.key==="Enter"){
+        console.log("Enter Key Pressed");
+    }
+
+    if(event.key==="Escape"){
+        console.log("Escape Key Pressed");
+    }
+
+    if(event.key==="ArrowUp"){
+        console.log("Up Arrow Pressed");
+    }
+
+    if(event.key==="ArrowDown"){
+        console.log("Down Arrow Pressed");
+    }
+
+    if(event.key==="ArrowLeft"){
+        console.log("Left Arrow Pressed");
+    }
+
+    if(event.key==="ArrowRight"){
+        console.log("Right Arrow Pressed");
+    }
+
+});
+
+
+//======================================================
+// 5. KEYBOARD SHORTCUT (Ctrl + S)
+//======================================================
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.ctrlKey && event.key==="s"){
+
+        event.preventDefault();
+
+        console.log("Ctrl + S Shortcut Pressed");
+
+    }
+
+});
+
+
+//======================================================
+// 6. CHANGE BACKGROUND USING KEYBOARD
+//======================================================
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.key==="r"){
+        document.body.style.background="red";
+    }
+
+    if(event.key==="g"){
+        document.body.style.background="green";
+    }
+
+    if(event.key==="b"){
+        document.body.style.background="lightblue";
+    }
+
+    if(event.key==="w"){
+        document.body.style.background="white";
+    }
+
+});
+
+
+//======================================================
+// 7. EVENT OBJECT PROPERTIES
+//======================================================
+
+document.addEventListener("keydown",(event)=>{
+
+    console.log("Key :",event.key);
+    console.log("Code :",event.code);
+    console.log("Ctrl :",event.ctrlKey);
+    console.log("Shift :",event.shiftKey);
+    console.log("Alt :",event.altKey);
+    console.log("Meta :",event.metaKey);
+
+});
+
+
+//======================================================
+// KEYBOARD EVENTS SUMMARY
+//======================================================
+
+/*
+
+Keyboard Events
+
+keydown
+--------
+Triggered when a key is pressed.
+
+keyup
+------
+Triggered when a key is released.
+
+
+Useful Event Properties
+
+event.key
+----------
+Returns the key value.
+Example:
+A
+Enter
+Escape
+
+event.code
+-----------
+Returns the physical key.
+Example:
+KeyA
+ArrowUp
+
+event.ctrlKey
+--------------
+Returns true if Ctrl is pressed.
+
+event.shiftKey
+---------------
+Returns true if Shift is pressed.
+
+event.altKey
+-------------
+Returns true if Alt is pressed.
+
+event.metaKey
+--------------
+Returns true if Windows(Command) key is pressed.
+
+
+Difference
+
+keydown
+--------
+Runs when key is pressed.
+Repeats while holding the key.
+
+keyup
+------
+Runs when key is released.
+Executes only once after release.
+
+
+Applications
+
+✔ Form Validation
+✔ Keyboard Shortcuts
+✔ Games
+✔ Search Box
+✔ Login Form
+✔ Navigation
+✔ Accessibility
+
+*/
+
+</script>
+
+</body>
+</html>
