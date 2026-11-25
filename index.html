@@ -3,15 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple starting point for exploring JavaScript examples.">
-    <title>JavaScript Learning Repository</title>
+    <meta name="description" content="A structured collection of JavaScript lessons, browser examples, and practice projects.">
+    <title>JavaScript Learning Hub</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #172033;
+            background: #f5f7fb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-width: 320px;
+            line-height: 1.6;
+        }
+
+        .hero {
+            padding: 4rem 1.25rem 3.25rem;
+            color: #ffffff;
+            background: linear-gradient(130deg, #111827, #263b63);
+        }
+
+        .hero-content, main {
+            width: min(1080px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 .5rem;
+            color: #a9c4ff;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 720px;
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.12;
+        }
+
+        .hero p:last-child {
+            max-width: 650px;
+            margin: 1rem 0 0;
+            color: #d7e1f5;
+            font-size: 1.05rem;
+        }
+
+        main { padding: 2.5rem 0 4rem; }
+
+        .section-heading { margin-bottom: 1.25rem; }
+        .section-heading h2 { margin: 0; font-size: 1.45rem; }
+        .section-heading p { margin: .25rem 0 0; color: #64708a; }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1rem;
+        }
+
+        .lesson-card {
+            padding: 1.25rem;
+            border: 1px solid #e1e7f0;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 5px 18px rgb(25 40 70 / 4%);
+        }
+
+        .lesson-card h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
+        .lesson-card p { min-height: 3rem; margin: 0 0 .9rem; color: #64708a; font-size: .92rem; }
+
+        .lesson-card a {
+            color: #2459c4;
+            font-weight: 650;
+            text-decoration: none;
+        }
+
+        .lesson-card a:hover { text-decoration: underline; }
+        .lesson-card a:focus-visible {
+            outline: 3px solid #8bb5ff;
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        .note {
+            margin-top: 1.5rem;
+            padding: 1rem 1.1rem;
+            border-left: 4px solid #6d91d8;
+            border-radius: 8px;
+            background: #eaf0fb;
+            color: #34435f;
+        }
+
+        footer {
+            padding: 1.25rem;
+            border-top: 1px solid #e1e7f0;
+            color: #64708a;
+            text-align: center;
+            font-size: .9rem;
+        }
+    </style>
 </head>
 <body>
+    <header class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">Learning by building</p>
+            <h1>JavaScript Learning Hub</h1>
+            <p>A practical collection of lessons and exercises covering JavaScript fundamentals, modern language features, asynchronous programming, and browser interactions.</p>
+        </div>
+    </header>
+
     <main>
-        <h1>Welcome to JavaScript</h1>
-        <p>This page is the starting point for the JavaScript learning examples.</p>
-        <p>Open the individual lesson files to explore variables, functions, objects, arrays, and browser APIs.</p>
+        <section aria-labelledby="lessons-title">
+            <div class="section-heading">
+                <h2 id="lessons-title">Explore the lessons</h2>
+                <p>Choose a topic to open its example.</p>
+            </div>
+
+            <div class="lesson-grid">
+                <article class="lesson-card">
+                    <h3>Language Fundamentals</h3>
+                    <p>Variables, constants, data types, and type conversion.</p>
+                    <a href="./variable.js">Variables</a> ·
+                    <a href="./Datatypes.js">Data types</a>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Operators & Control Flow</h3>
+                    <p>Expressions, decisions, and repetition using loops.</p>
+                    <a href="./operator.js">Operators</a> ·
+                    <a href="./conditioalStatemts.js">Conditions</a> ·
+                    <a href="./loops.js">Loops</a>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Functions & Collections</h3>
+                    <p>Reusable functions and common JavaScript data structures.</p>
+                    <a href="./function.js">Functions</a> ·
+                    <a href="./arrays.js">Arrays</a> ·
+                    <a href="./object.js">Objects</a>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Object-Oriented JavaScript</h3>
+                    <p>Constructors, classes, inheritance, and method overriding.</p>
+                    <a href="./constructor.js">Constructors</a> ·
+                    <a href="./class.js">Classes</a> ·
+                    <a href="./inheritance.js">Inheritance</a>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Core Language Concepts</h3>
+                    <p>JSON, recursion, date and time, and error handling.</p>
+                    <a href="./json.js">JSON</a> ·
+                    <a href="./recursion.js">Recursion</a> ·
+                    <a href="./errorhandling.js">Errors</a>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Asynchronous JavaScript</h3>
+                    <p>Understand promises, chaining, and asynchronous workflows.</p>
+                    <a href="./promise.js">Promises</a>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>DOM & Browser Events</h3>
+                    <p>Update page content and respond to mouse and keyboard input.</p>
+                    <a href="./dom.html">DOM</a> ·
+                    <a href="./eventlistener.html">Events</a> ·
+                    <a href="./keyboardeventlistner.html">Keyboard</a>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Practice Project</h3>
+                    <p>Apply DOM manipulation and event handling in a small task app.</p>
+                    <a href="./todo.html">Open Todo List</a>
+                </article>
+            </div>
+
+            <p class="note">Most <code>.js</code> lessons can be run individually with Node.js. HTML lessons should be opened in a browser.</p>
+        </section>
     </main>
-    <script src="./script.js"></script>
+
+    <footer>
+        JavaScript Learning Repository · <a href="https://github.com/techpremkumar/JS">View source on GitHub</a>
+    </footer>
+
+    <script src="./script.js" defer></script>
 </body>
 </html>
