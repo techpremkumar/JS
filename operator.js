@@ -1,65 +1,67 @@
-let a = 10;
-let b = 3;
+/*
+ * JavaScript Operators
+ *
+ * This example demonstrates arithmetic, assignment, comparison,
+ * logical, bitwise, ternary, string, and type operators.
+ */
 
-console.log(a + b); // 13
-console.log(a - b); // 7
-console.log(a * b); // 30
-console.log(a / b); // 3.3333
-console.log(a % b); // 1
-console.log(a ** b); // 1000
+// 1. Arithmetic operators
+const firstNumber = 10;
+const secondNumber = 3;
 
-//2. Assignment Operators
-let x = 10;
+console.log("Addition:", firstNumber + secondNumber);
+console.log("Subtraction:", firstNumber - secondNumber);
+console.log("Multiplication:", firstNumber * secondNumber);
+console.log("Division:", firstNumber / secondNumber);
+console.log("Remainder:", firstNumber % secondNumber);
+console.log("Exponentiation:", firstNumber ** secondNumber);
 
-x += 5;
-console.log(x); // 15
+// 2. Assignment operators
+let score = 10;
 
-x *= 2;
-console.log(x); // 30
+score += 5;
+console.log("After += 5:", score);
 
-//3. Comparison Operators
-console.log(5 == "5");   // true
-console.log(5 === "5");  // false
-console.log(5 != 3);     // true
-console.log(5 > 3);      // true
-console.log(5 < 3);      // false
-console.log(5 >= 3);     // true
-console.log(5 <= 3);     // false
+score *= 2;
+console.log("After *= 2:", score);
 
-//logical Operators
-let age = 20;
+// 3. Comparison operators
+console.log("5 == '5':", 5 == "5"); // Demonstrates type coercion.
+console.log("5 === '5':", 5 === "5");
+console.log("5 !== 3:", 5 !== 3);
+console.log("5 > 3:", 5 > 3);
+console.log("5 < 3:", 5 < 3);
+console.log("5 >= 3:", 5 >= 3);
+console.log("5 <= 3:", 5 <= 3);
 
-console.log(age > 18 && age < 25); // true
-console.log(age > 30 || age < 25); // true
-console.log(!(age > 18));          // false
+// 4. Logical operators
+const age = 20;
 
-// Bitwise operator
-console.log(5 & 1); // 1
-console.log(5 | 1); // 5
+console.log("Age is between 18 and 25:", age > 18 && age < 25);
+console.log("Age is over 30 or under 25:", age > 30 || age < 25);
+console.log("Age is not above 18:", !(age > 18));
 
-//ternary operator
-//syntax: condition ? expression1 : expression2
-let result = (age >= 18) ? "Adult" : "Not Adult";
-console.log(result); // "Adult"
+// 5. Bitwise operators
+console.log("5 & 1:", 5 & 1);
+console.log("5 | 1:", 5 | 1);
 
-//String Operators
-let str1 = "Hello";
-let str2 = "World";
-console.log(str1 + " " + str2); // "Hello World"
+// 6. Ternary operator
+const eligibility = age >= 18 ? "Adult" : "Minor";
+console.log("Age category:", eligibility);
 
-//8. Type Operators
-console.log(typeof 5); // "number"
-console.log(typeof "Hello"); // "string"
+// 7. String concatenation
+const greeting = "Hello";
+const language = "JavaScript";
+console.log("Greeting:", greeting + " " + language);
 
+// 8. Type operator
+console.log("typeof 5:", typeof 5);
+console.log('typeof "Hello":', typeof "Hello");
 
-//strict Equality Comparison
-// Is a != b ?
+// 9. Boolean conversion and strict equality
+const textValue = "0";
+const numericValue = 0;
 
-let a = '0';
-a = Boolean(a);
-
-let b = 0;
-b = Boolean(b);
-
-console.log('0' === 0);
-
+console.log('Boolean("0"):', Boolean(textValue));
+console.log("Boolean(0):", Boolean(numericValue));
+console.log("'0' === 0:", "0" === 0);
