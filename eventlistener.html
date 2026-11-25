@@ -1,30 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple demonstration of JavaScript mouse events.">
+    <title>JavaScript Mouse Events</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+            place-items: center;
+            background: #f4f6fb;
+            color: #182238;
+            font-family: system-ui, sans-serif;
+        }
+
+        main {
+            width: min(100%, 440px);
+            padding: 2rem;
+            border: 1px solid #e1e7f0;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 12px 32px rgb(24 34 56 / 8%);
+            text-align: center;
+        }
+
+        h1 { margin-top: 0; font-size: 1.6rem; }
+        p { color: #59667e; }
+
+        button {
+            margin-top: .75rem;
+            padding: .8rem 1.2rem;
+            border: 0;
+            border-radius: 8px;
+            background: #2459c4;
+            color: white;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 650;
+        }
+
+        button:hover { background: #19469f; }
+        button:focus-visible { outline: 3px solid #8bb5ff; outline-offset: 3px; }
+
+        #status {
+            min-height: 1.5rem;
+            margin-top: 1.25rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
 <body>
+    <main>
+        <h1>Mouse Event Demonstration</h1>
+        <p>Click the button, move the pointer over it, or move the pointer away to see different events.</p>
+        <button id="event-button" type="button">Interact with me</button>
+        <p id="status" role="status" aria-live="polite">Waiting for an event…</p>
+    </main>
 
-<button id="sj">Irukku</button>
+    <script>
+        const button = document.getElementById("event-button");
+        const status = document.getElementById("status");
 
-<script>
-let btn = document.getElementById("sj");
+        button.addEventListener("click", () => {
+            status.textContent = "Click event detected.";
+            console.log("click event");
+        });
 
-// Click Event
-btn.addEventListener("click", (event) => {
-    btn.textContent = "Aana Illa";
-    console.log("clicked");
-});
+        button.addEventListener("mouseover", () => {
+            status.textContent = "Mouseover event detected.";
+            console.log("mouseover event");
+        });
 
-// Mouse Over Event
-btn.addEventListener("mouseover", (event) => {
-    btn.textContent = "Oruvella irukumo";
-    console.log("hover");
-});
-
-// Mouse Out Event
-btn.addEventListener("mouseout", (event) => {
-    btn.textContent = "Irukku";
-    console.log("mouse out");
-});
-</script>
-
+        button.addEventListener("mouseout", () => {
+            status.textContent = "Mouseout event detected.";
+            console.log("mouseout event");
+        });
+    </script>
 </body>
 </html>
